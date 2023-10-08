@@ -17,7 +17,7 @@ export default function VerifyEmailPage() {
             setVerified(true);
         } catch (error:any) {
             setError(true);
-            console.log(error.reponse.data);
+            console.log(error.response.data);
             
         }
 
@@ -29,13 +29,13 @@ export default function VerifyEmailPage() {
     }, []);
 
 
-
     useEffect(() => {
-        if (token.length > 0) {
-          verifyUserEmail();
+        if(token.length > 0) {
+            verifyUserEmail();
         }
-      }, [token, verifyUserEmail]);
-      
+    }, [token]);
+
+    
 
     return(
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
