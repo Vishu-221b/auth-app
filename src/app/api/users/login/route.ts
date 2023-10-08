@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 
 connect();
 
-export async function POST(request: NextRequest){
+export async function POST(request: NextRequest): Promise<void | Response | { status: number; }> {
 
     try{
         const reqBody = await request.json();
